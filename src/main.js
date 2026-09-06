@@ -1,7 +1,7 @@
 import { CameraField } from './cameraField.js';
 import { Particles } from './particles.js';
 import { mountControls } from './controls.js';
-const settings = { count: 10000, flowSpeed: .28, turbulence: 1.5, damping: .968, repulsion: 2.5, obstacleRadius: .35, distribution: .1, threshold: .12, backgroundAdapt: .02, particleSize: 1.5, trail: 0, invert: false, flipX: true, flipY: false, cropLeft: 0, cropRight: 0, cropTop: 0, cropBottom: 0 };
+const settings = { count: 16000, flowSpeed: .10, turbulence: 1.5, damping: .968, repulsion: 2.5, obstacleRadius: .35, distribution: .1, threshold: .12, backgroundAdapt: .02, particleSize: 1.5, trail: 0, invert: false, flipX: true, flipY: false, cropLeft: 0, cropRight: 0, cropTop: 0, cropBottom: 0 };
 const canvas = document.querySelector('#particles'), debug = document.querySelector('#camera-debug');
 const particles = new Particles(canvas, settings); const field = new CameraField(document.querySelector('#camera'), debug, settings); const panel = mountControls(settings, () => field.reset()); const menuTrigger = document.querySelector('#menu-trigger');
 panel.classList.add('hidden');

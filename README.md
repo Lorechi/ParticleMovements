@@ -1,18 +1,6 @@
 # Interactive Particle Field
 
-A lightweight projection-oriented particle installation prototype. It turns a webcam into one low-resolution foreground/obstacle field, so any moving silhouette can influence the same particles without person tracking or ML.
-
-## Run
-
-Serve this folder over localhost (camera permission requires a secure context):
-
-```sh
-npx serve .
-```
-
-Open the shown localhost URL, allow camera access, then stay still briefly or press `R` to relearn the background.
-
-Controls are hidden by default; hover over the top-left corner to reveal the Settings button, or press `H`. `D` toggles the annotated camera/force-field preview, `F` fullscreen, `R` relearns the background, and `I` inverts the display. The debug preview shows cropped/mirrored camera input, detected foreground in red, and cyan arrows indicating the force that is applied toward empty space. Background adaptation defaults to a few seconds: a stopped silhouette naturally fades out of the obstacle field while the current keeps flowing.
+https://lorechi.github.io/ParticleMovements/
 
 ## Long-running use
 
