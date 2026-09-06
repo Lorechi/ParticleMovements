@@ -12,7 +12,11 @@ npx serve .
 
 Open the shown localhost URL, allow camera access, then stay still briefly or press `R` to relearn the background.
 
-Controls: `H` settings, `D` annotated camera/force-field preview, `F` fullscreen, `R` relearn background, `I` invert. The debug preview shows cropped/mirrored camera input, detected foreground in red, and cyan arrows indicating the force that is applied toward empty space. Background adaptation defaults to a few seconds: a stopped silhouette naturally fades out of the obstacle field while the current keeps flowing. The control panel exposes particle, flow, camera threshold, crop, and flip settings.
+Controls are hidden by default; hover over the top-left corner to reveal the Settings button, or press `H`. `D` toggles the annotated camera/force-field preview, `F` fullscreen, `R` relearns the background, and `I` inverts the display. The debug preview shows cropped/mirrored camera input, detected foreground in red, and cyan arrows indicating the force that is applied toward empty space. Background adaptation defaults to a few seconds: a stopped silhouette naturally fades out of the obstacle field while the current keeps flowing.
+
+## Long-running use
+
+The runtime uses fixed typed arrays and reuses its camera buffers, so normal animation does not steadily allocate memory. Camera-processing errors degrade gracefully to an uninterrupted ambient particle stream. WebGL context loss is handled and the renderer is rebuilt when the browser restores it. For an installation, use a dedicated Chromium/Chrome profile, keep the machine awake, disable system sleep/screen lock, grant camera permission for the local URL once, and serve over `localhost` or HTTPS. A browser kiosk/fullscreen launch is preferable to a file URL because camera access is restricted outside secure contexts.
 
 ## Architecture
 
