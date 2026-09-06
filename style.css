@@ -1,0 +1,15 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+#particles { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+#camera { display: none; }
+#camera-debug { position: fixed; right: 16px; bottom: 16px; width: min(480px, calc(100vw - 32px)); height: auto; border: 1px solid #fff8; background: #000; display: none; }
+#controls { position: fixed; top: 16px; left: 16px; width: 252px; max-height: calc(100vh - 32px); overflow: auto; padding: 14px; color: #eee; background: #101114dd; border: 1px solid #ffffff2b; border-radius: 8px; font: 12px/1.35 system-ui, sans-serif; }
+#controls.hidden { display: none; }
+#controls h1 { font-size: 14px; font-weight: 600; margin: 0 0 10px; letter-spacing: .06em; text-transform: uppercase; }
+.control { display: grid; grid-template-columns: 1fr 82px; gap: 8px; align-items: center; margin: 8px 0; }
+.control label { color: #d5d5d5; }
+.control input[type=range] { width: 100%; grid-column: 1 / -1; accent-color: #ddd; }
+.control output { text-align: right; color: #fff; font-variant-numeric: tabular-nums; }
+.control.check { grid-template-columns: 1fr auto; }
+.control.check input { margin: 0; }
+.hint { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid #ffffff25; color: #aaa; font-size: 11px; }
