@@ -2,6 +2,21 @@
 
 https://lorechi.github.io/ParticleMovements/
 
+## Desktop Python runtime
+
+`particle_field.py` is a standalone, long-running Python rendition of the
+installation. It reuses fixed NumPy simulation and camera buffers, while
+rendering a camera-reactive source/sink stream in a desktop window.
+
+```sh
+python -m pip install -r requirements.txt
+python particle_field.py
+```
+
+Press `Esc` to exit and `R` to relearn the camera background. To embed it in
+another program, call `run_particle_field()`; pass `camera_index=None` for the
+ambient stream or `max_seconds=5` for a bounded test run.
+
 ## Long-running use
 
 The runtime uses fixed typed arrays and reuses its camera buffers, so normal animation does not steadily allocate memory. Camera-processing errors degrade gracefully to an uninterrupted ambient particle stream. WebGL context loss is handled and the renderer is rebuilt when the browser restores it. For an installation, use a dedicated Chromium/Chrome profile, keep the machine awake, disable system sleep/screen lock, grant camera permission for the local URL once, and serve over `localhost` or HTTPS. A browser kiosk/fullscreen launch is preferable to a file URL because camera access is restricted outside secure contexts.
